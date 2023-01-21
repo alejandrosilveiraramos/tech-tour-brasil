@@ -2,11 +2,11 @@
 -- Table tb_hoteis
 -- -----------------------------------------------------
 
-CREATE TABLE tb_hoteis (
-  id_hotel SERIAL,
-  name_hotel VARCHAR(45) NOT NULL,
-  city VARCHAR(45) NOT NULL,
-  coust DECIMAL(9,2) NOT NULL,
+CREATE TABLE IF NOT EXISTS tb_hoteis (
+    id_hotel SERIAL,
+    name_hotel VARCHAR(45) NOT NULL,
+    city VARCHAR(45) NOT NULL,
+    coust DECIMAL(9,2) NOT NULL,
   PRIMARY KEY (id_hotel));
 
 
@@ -14,24 +14,22 @@ CREATE TABLE tb_hoteis (
 -- Table tb_users
 -- -----------------------------------------------------
 
-CREATE TABLE tb_users (
-  id_users SERIAL,
-  name VARCHAR(45) NOT NULL,
-  gender BOOL NOT NULL,
-  cpf VARCHAR(11) NOT NULL,
-  cep VARCHAR(8) NOT NULL,
-  phone VARCHAR(45) NULL,
-  cellphone VARCHAR(45) NOT NULL,
-  email VARCHAR(45) NOT NULL,
-  password VARCHAR(45) NOT NULL,
+CREATE TABLE IF NOT EXISTS tb_users (
+    id_users SERIAL,
+    name VARCHAR(45) NOT NULL,
+    gender CHAR(1) NOT NULL,
+    cpf VARCHAR(11) NOT NULL,
+    cep VARCHAR(8) NOT NULL,
+    phone VARCHAR(45) NULL,
+    cellphone VARCHAR(45) NOT NULL,
+    email VARCHAR(45) NOT NULL,
+    password VARCHAR(45) NOT NULL,
   PRIMARY KEY (id_users));
 
  
 -- -----------------------------------------------------
 -- Table tb_historic
 -- -----------------------------------------------------
-
-DROP TABLE IF EXISTS tb_historic;
 
 CREATE TABLE IF NOT EXISTS tb_historic (
     id_history INT NOT NULL,
