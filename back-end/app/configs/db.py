@@ -8,15 +8,13 @@ try:
     port ="5432",
     database = "techtour", 
     user="postgres", password = "123456")
-    print("Conectado.")
+    print("Db connection: Online")
 
 except Exception:
-    print("Você está sem conexâo.")
+    print("Db connection: Offline")
 
 if conn is not None:
     
-    print("Sua Conexão está estabilizada.")
-
     cursor = conn.cursor()
     
     cursor.execute("""CREATE TABLE tb_hoteis (
@@ -42,7 +40,7 @@ if conn is not None:
 
     print("Tabela Usuário criada.")
 
-    cursor.execute("""CREATE TABLE tb_historic (
+    cursor.execute("""CREATE TABLE tb_history (
                         id_history SERIAL,
                         fk_id_users INT NOT NULL,
                         fk_id_hotel INT NOT NULL,
