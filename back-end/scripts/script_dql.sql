@@ -8,7 +8,7 @@ SELECT
     name_hotel AS "Hotel",
     city AS "Cidade",
     coust AS "Preço"
-FROM tb_hoteis
+FROM tb_hotel
 WHERE city = 'Blumenau';
 
 
@@ -18,7 +18,7 @@ SELECT
     name_hotel AS "Hotel",
     city AS "Cidade",
     coust AS "Preço"
-FROM tb_hoteis
+FROM tb_hotel
 WHERE city = 'Blumenau'
 ORDER BY coust ASC;
 
@@ -29,7 +29,7 @@ SELECT
     name_hotel AS "Hotel",
     city AS "Cidade",
     coust AS "Preço"
-FROM tb_hoteis
+FROM tb_hotel
 ORDER BY coust ASC, city ASC;
 
 
@@ -38,8 +38,9 @@ ORDER BY coust ASC, city ASC;
 -- -----------------------------------------------------
 
 SELECT 
-	id_users AS "Id Usuário",
-    name AS "Nome",
+	id_user AS "Id Usuário",
+    last_name AS "Sobrenome",
+    first_name AS "Nome",
     gender AS "Sexo",
     cpf AS "CPF",
     cep AS "CEP",
@@ -47,7 +48,7 @@ SELECT
     cellphone AS "Celular",
     email AS "Email",
     password AS "Senha"
-FROM tb_users;
+FROM tb_user;
 
 
 -- -----------------------------------------------------
@@ -65,8 +66,9 @@ FROM tb_historic;
 -- Select com as outras tabelas --
 
 SELECT
-	id_users AS "Número do Usuário",
-    name AS "Nome",
+	id_user AS "Número do Usuário",
+    last_name AS "Sobrenome",
+    first_name AS "Nome",
     gender AS "Sexo",
     cpf AS "CPF",
     cep AS "CEP",
@@ -83,8 +85,8 @@ SELECT
     name_hotel AS "Hotel",
     city AS "Cidade",
     coust AS "Diária"
-FROM tb_historic
-INNER JOIN tb_users
-    ON id_users = fk_id_users
-INNER JOIN tb_hoteis
+FROM tb_history
+INNER JOIN tb_user
+    ON id_user = fk_id_user
+INNER JOIN tb_hotel
 	ON id_hotel = fk_id_hotel;
