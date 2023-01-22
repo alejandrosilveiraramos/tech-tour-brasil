@@ -1,6 +1,6 @@
 from main import db
 
-class User(db.Model):
+class Hotel(db.Model):
     _hotel_id = db.Column(db.Integer, primary_key=True, autoincrement = True)
     _hotel_name = db.Column(db.String(64), nullable = False) 
     _hotel_city = db.Column(db.String(64), nullable = False) 
