@@ -15,17 +15,17 @@ def register():
 def create_user_route():
     
     if request.method == "POST":
-        _user_lastName = request.form["user_lastName"]
-        _user_firstName = request.form["user_firstName"]
-        _user_gender = request.form["user_gender"]
-        _user_cpf = request.form["user_cpf"]
-        _user_cep = request.form["user_cep"]
-        _user_phone = request.form["user_phone"]
-        _user_cellphone = request.form["user_cellphone"]
-        _user_email = request.form["user_email"]
-        _user_password = request.form["user_password"]
+        user_lastname = request.form["user_lastName"]
+        user_firstname = request.form["user_firstName"]
+        user_gender = bool(request.form["user_gender"])
+        user_cpf = request.form["user_cpf"]
+        user_cep = request.form["user_cep"]
+        user_phone = request.form["user_phone"]
+        user_cellphone = request.form["user_cellphone"]
+        user_email = request.form["user_email"]
+        user_password = request.form["user_password"]
         
-        create_user(_user_lastName, _user_firstName, _user_gender, _user_cpf, _user_cep, _user_phone, _user_cellphone, _user_email, _user_password)
+        create_user(user_lastname, user_firstname, user_gender, user_cpf, user_cep, user_phone, user_cellphone, user_email, user_password)
         
         return redirect(url_for("success"))
     

@@ -3,9 +3,9 @@ import psycopg2
 
 try:
     conn = psycopg2.connect(
-    host = "192.168.0.4",
+    host = "177.82.232.167",
     port ="5432",
-    database = "postgres", 
+    database = "techtour", 
     user="postgres", password = "123456")
     print("Db connection: Online")
 

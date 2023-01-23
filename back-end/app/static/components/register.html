@@ -51,9 +51,9 @@
                 <div class="col-md-6 mx-auto">
                     <h2>Cadastre-se aqui</h2>
                     <p>Já possui uma conta? <a href="#">Faça login</a></p>
-                    <form method="post" action="/create_user">
+                    <form method="post" action="{{ url_for('create_user_route') }}">
                         <div class="form-group">
-                            <label for="user_firstName">Nome</label>
+                            <label for="user_firstname">Nome</label>
                             <input type="text" class="form-control" id="user_firstName" name="user_firstName" placeholder="Insira seu nome">
                         </div>
                         <div class="form-group">
@@ -63,8 +63,8 @@
                         <div class="form-group">
                             <label for="user_gender">Gênero</label>
                             <select class="form-control" id="user_gender" name="user_gender">
-                                <option>Masculino</option>
-                                <option>Feminino</option>
+                                <option value="true">Masculino</option>
+                                <option value="false">Feminino</option>
                             </select>
                         </div>
                         <div class="form-group">

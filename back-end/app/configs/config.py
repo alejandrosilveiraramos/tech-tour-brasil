@@ -8,7 +8,7 @@ try:
         usuario = "postgres",
         senha = "123456",
         servidor = "177.82.232.167",
-        database = "postgres")
+        database = "techtour")
     print("Test connection: Online")
 
 except Exception:
