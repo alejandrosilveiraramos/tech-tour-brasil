@@ -6,15 +6,17 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(
     __name__,
-    template_folder='C:/Users/Alejandro/OneDrive/Documents/projects2023/tech-tour-brasil/back-end/app/static/components',
-    static_folder='C:/Users/Alejandro/OneDrive/Documents/projects2023/tech-tour-brasil/back-end/app/static/')
+    template_folder='C:/python/tech-tour-brasil/back-end/app/static/components',
+    static_folder='C:/python/tech-tour-brasil/back-end/app/static')
+
+app.config.from_pyfile('./configs/config.py')
 
 db = SQLAlchemy(app)
 
 
 # --- DB connection ---
 
-app.config.from_pyfile('./configs/config.py')
+
 
 # --- Routes ---
 
