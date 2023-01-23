@@ -18,7 +18,7 @@ app.config.from_pyfile('./configs/config.py')
 
 # --- Routes ---
 
-from controller.routes  import *
+from routes.routes  import *
 
 # --- Main Running ---
 if __name__ == "__main__":

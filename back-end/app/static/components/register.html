@@ -22,7 +22,7 @@
 <body>
   <header class="bg-#f1f1e7">
     <nav class="custom-header navbar navbar-expand-lg navbar-light bg-transparent">
-      <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{{url_for('home')}}">
         <img src="static/assets/logo.png" alt="Logo do Hotel Tech Tour Blumenau" width="120" height="120">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,10 +34,7 @@
             <a class="nav-link" href="{{url_for('home')}}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{url_for('hotels')}}">Hotéis</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Perfil</a>
+            <a class="nav-link" href="#">Hotéis</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
@@ -54,61 +51,56 @@
                 <div class="col-md-6 mx-auto">
                     <h2>Cadastre-se aqui</h2>
                     <p>Já possui uma conta? <a href="#">Faça login</a></p>
-                    <form>
+                    <form method="post" action="/create_user">
                         <div class="form-group">
                             <label for="user_firstName">Nome</label>
-                            <input type="text" class="form-control" id="user_firstName" placeholder="Insira seu nome">
+                            <input type="text" class="form-control" id="user_firstName" name="user_firstName" placeholder="Insira seu nome">
                         </div>
                         <div class="form-group">
                             <label for="user_lastName">Sobrenome</label>
-                            <input type="text" class="form-control" id="user_lastName" placeholder="Insira seu sobrenome">
+                            <input type="text" class="form-control" id="user_lastName" name="user_lastName" placeholder="Insira seu sobrenome">
                         </div>
                         <div class="form-group">
                             <label for="user_gender">Gênero</label>
-                            <select class="form-control" id="user_gender">
+                            <select class="form-control" id="user_gender" name="user_gender">
                                 <option>Masculino</option>
                                 <option>Feminino</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="user_cpf">CPF</label>
-                            <input type="text" class="form-control" id="user_cpf" placeholder="Insira seu CPF">
+                            <input type="text" class="form-control" id="user_cpf" name="user_cpf" placeholder="Insira seu CPF">
                         </div>
                         <div class="form-group">
                             <label for="user_cep">CEP</label>
-                            <input type="text" class="form-control" id="user_cep" placeholder="Insira seu CEP">
+                            <input type="text" class="form-control" id="user_cep" name="user_cep" placeholder="Insira seu CEP">
                         </div>
                         <div class="form-group">
-                            <label for="_user_phone">Telefone:</label>
-                            <input type="text" class="form-control" id="_user_phone" placeholder="Insira seu numero de telefone" name="_user_phone">
+                            <label for="user_phone">Telefone:</label>
+                            <input type="text" class="form-control" id="_user_phone" placeholder="Insira seu numero de telefone" name="user_phone">
                           </div>
                           <div class="form-group">
-                            <label for="_user_cellphone">Celular:</label>
-                            <input type="text" class="form-control" id="_user_cellphone" placeholder="Insira seu numero de celular  " name="_user_cellphone">
+                            <label for="user_cellphone">Celular:</label>
+                            <input type="text" class="form-control" id="user_cellphone" placeholder="Insira seu numero de celular  " name="user_cellphone">
                           </div>
                           <div class="form-group">
-                            <label for="_user_email">Email:</label>
-                            <input type="email" class="form-control" id="_user_email" name="_user_email">
+                            <label for="user_email">Email:</label>
+                            <input type="email" class="form-control" id="user_email" name="user_email">
                           </div>
                           <div class="form-group">
-                            <label for="_user_password">Senha:</label>
-                            <input type="password" class="form-control" id="_user_password" name="_user_password">
+                            <label for="user_password">Senha:</label>
+                            <input type="password" class="form-control" id="user_password" name="user_password">
                           </div>
+                          <button type="submit" class="btn btn-primary float-right">Cadastrar</button>
                     </form>
-                    <button type="submit" class="btn btn-primary float-right">Cadastrar</button>
-
                 <div class="col-md-6">
             <div class="row"></div>
         <div class="container"></div>          
   </main>
-  <div class="container-fluid">
-    <footer  style="height: auto;">
-      <div class="row">
-        <div class="col-md-12">
-          <p>Copyright © Hotel Tech Tour Blumenau</p>
-        </div>
-      </div>
-    </footer>
-  </div>
+  <footer class="footer navbar-fixed-bottom">
+    <div class="col-md-12">
+        <p class="text-center">Copyright © Hotel Tech Tour Blumenau</p>
+    </div>
+  </footer>
 </body>
 </html>

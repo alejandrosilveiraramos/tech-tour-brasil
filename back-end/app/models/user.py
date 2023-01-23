@@ -13,17 +13,16 @@ class User(db.Model):
     _user_password = db.Column(db.String(64), nullable = False)
     
     
-    def __init__(self, user_id, user_lastName, user_firstName, user_gender, user_cpf, user_cep, user_phone, user_cellphone, user_email, user_password):
-        self.user_id = user_id
-        self.user_lastName = user_lastName
-        self.user_firstName = user_firstName
-        self.user_gender = user_gender
-        self.user_cpf = user_cpf
-        self.user_cep = user_cep
-        self.user_phone = user_phone
-        self.user_cellphone = user_cellphone
-        self.user_email = user_email
-        self.user_password = user_password
+    def __init__(self, _user_lastName, _user_firstName, _user_gender, _user_cpf, _user_cep, _user_phone, _user_cellphone, _user_email, _user_password):
+        self._user_lastName = _user_lastName
+        self._user_firstName = _user_firstName
+        self._user_gender = _user_gender
+        self._user_cpf = _user_cpf
+        self._user_cep = _user_cep
+        self._user_phone = _user_phone
+        self._user_cellphone = _user_cellphone
+        self._user_email = _user_email
+        self._user_password = _user_password
 
 
     def __repr__(self):

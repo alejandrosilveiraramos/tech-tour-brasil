@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
@@ -22,7 +22,7 @@
 <body>
   <header class="bg-#f1f1e7">
     <nav class="custom-header navbar navbar-expand-lg navbar-light bg-transparent">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="{{url_for('home')}}">
         <img src="static/assets/logo.png" alt="Logo do Hotel Tech Tour Blumenau" width="120" height="120">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,10 +34,7 @@
             <a class="nav-link" href="{{url_for('home')}}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{url_for('hotels')}}">Hotéis</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Perfil</a>
+            <a class="nav-link" href="#">Hotéis</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
@@ -56,27 +53,40 @@
               <div class="col-md-6">
                 <form>
                     <div class="search-bar">
-                        <input type="text" class="form-control form-control-md" placeholder="Procure seu quarto aqui">
-                        <button type="submit" class="btn btn-primary btn-sm">Search</button>
+                        <input type="text" class="form-control form-control-md" placeholder="Procure seu hotel aqui">
+                        <button type="submit" class="btn btn-primary btn-sm">Procurar</button>
                     </div>
             </div>
           </div>
-        <div class="col-md-6">
-          <h1>Seja bem vindo!</h1>
-          <p>Procurando por um lugar confortável para ficar durante sua viagem? O Hotel Tech Tour Blumenau oferece quartos espaçosos e modernos, equipados com tudo o que você precisa para uma estadia agradável.</p>
-          <a href="#" class="btn btn-primary">Explorar</a>
-        </div>
+          <div class="row">
+            <div class="col-md-6">
+              <h1>Seja bem vindo!</h1>
+              <p>Procurando por um lugar confortável para ficar durante sua viagem? O Hotel Tech Tour Blumenau oferece quartos espaçosos e modernos, equipados com tudo o que você precisa para uma estadia agradável.</p>
+              <a href="#" class="btn btn-primary">Explorar</a>
+            </div>
+            <div class="col-md-6">
+              <div>
+                <img class="rounded" src="static/assets/greekHotel.jpg" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <img class="rounded" src="static/assets/rioHotel.jpg" alt="">
+            </div>
+            <div class="col-md-6">
+              <h1>Apenas o melhor para voce!</h1>
+              <p>O Tech Tour Brasil é o site perfeito para aqueles que procuram reservar hotéis com os melhores preços. Com uma variedade de opções de hotéis em todo o país, é fácil encontrar a escolha perfeita para suas necessidades e orçamento. Além disso, o site oferece ferramentas de pesquisa avançadas para ajudá-lo a encontrar o hotel certo, como filtros de preço, localização e avaliações de outros viajantes.</p>
+              <p>Outra vantagem de reservar um hotel através do Tech Tour Brasil é a possibilidade de comparar preços entre diferentes sites de reserva, garantindo que você sempre obtenha o melhor negócio. Além disso, o site oferece suporte ao cliente 24 horas por dia, 7 dias por semana, para garantir que qualquer problema ou dúvida seja resolvido rapidamente e sem problemas. Com o Tech Tour Brasil, você pode reservar sua próxima viagem com confiança e tranquilidade.</p>
+            </div>
+          </div>
       </div>
     </div>
   </main>
-  <div class="container-fluid">
-    <footer class="fixed-bottom" style="height: auto;">
-      <div class="row">
-        <div class="col-md-12">
-          <p>Copyright © Hotel Tech Tour Blumenau</p>
-        </div>
-      </div>
-    </footer>
-  </div>
+  <footer class="footer navbar-fixed-bottom">
+    <div class="col-md-12">
+        <p class="text-center">Copyright © Hotel Tech Tour Blumenau</p>
+    </div>
+  </footer>
 </body>
 </html>
