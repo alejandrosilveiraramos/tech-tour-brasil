@@ -6,8 +6,8 @@ try:
         SGBD = "postgresql",
         usuario = "postgres",
         senha = "123456",
-        servidor = "192.168.0.4",
-        database = "postgres")
+        servidor = "177.82.232.167",
+        database = "techtour")
     print("Test connection: Online")
 
 except Exception:
