@@ -35,6 +35,10 @@ def create_user_route():
 def success():
     return render_template("success.html")
 
+@app.route("/profile")
+def read_user_route():
+    return render_template("profile.html")
+
 @app.route("/login")
 def login():
     return render_template("login.html")
