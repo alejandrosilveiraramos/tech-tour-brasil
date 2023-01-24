@@ -18,5 +18,5 @@ class History(db.Model):
         self.history_check_out = history_check_out
 
 
-    def __repr__(self):
-        return '<Name %r>' % self.name
+def __repr__(self):
+    return '<Name %r>' % self.name

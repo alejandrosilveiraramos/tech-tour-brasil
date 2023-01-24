@@ -14,5 +14,5 @@ class Hotel(db.Model):
         self.hotel_coust = hotel_coust
 
 
-    def __repr__(self):
-        return '<Name %r>' % self.name
+def __repr__(self):
+    return '<Name %r>' % self.name

@@ -51,7 +51,7 @@
                 <div class="col-md-6 mx-auto">
                     <h2>Login</h2>
 
-                    <form method="post" action="{{ url_for('create_user_route') }}">
+                    <form method="post" action="{{ url_for('authenticte_user_route') }}">
                         <div class="form-group">
                             <label for="user_email">E-mail</label>
                             <input type="email" class="form-control form-control-md" id="user_email" name="user_email" placeholder="Insira seu e-mail">
@@ -61,7 +61,7 @@
                             <input type="password" class="form-control form-control-md" id="user_password" name="user_password" placeholder="Insira sua senha">
                         </div>
 
-                        <button type="submit" class="btn btn-primary float-right">Cadastrar</button>
+                        <button type="submit" class="btn btn-primary float-right">Logar</button>
                     </form>
                    
                     

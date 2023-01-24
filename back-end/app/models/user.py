@@ -25,5 +25,5 @@ class Users(db.Model):
         self._user_password = _user_password
 """
 
-    def __repr__(self):
-        return '<Name %r>' % self.name
+def __repr__(self):
+    return '<Name %r>' % self.name

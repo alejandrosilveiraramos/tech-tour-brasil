@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, url_for
+from flask import render_template, request, redirect, url_for, session
 from main import app
 from controller.user import create_user, authenticte_user 
 
@@ -39,9 +39,21 @@ def success():
     return render_template('success.html')
 
 
+@app.route('/profile')
+def read_user_route():
+    return render_template('profile.html')
+
+
 @app.route('/login')
 def login():
     return render_template('login.html')
+
+
+@app.route('/logout')
+def logout():
+    # Remova o nome de usuário da sessão se estiver lá.
+    session.pop('username', None)
+    return redirect(url_for('home'))
 
 
 @app.route('/user')
@@ -53,11 +65,11 @@ def user():
 def authenticte_user_route():
 
     if request.method == 'POST':
-        #user_firstname = request.form['user_firstName']
-        #user_password = request.form['user_password']
-        user_firstname = 'David'
-        user_password = '1234'
+        louser_email = request.form['user_email']
+        louser_password = request.form['user_password']
 
-        authenticte_user(user_firstname, user_password)
+        authenticte_user(louser_email, louser_password)
+        
+        return redirect(url_for('success'))
 
-        return 'Usuário autenticado com sucesso!'
+    return render_template('hotels.html')
