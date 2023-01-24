@@ -6,10 +6,10 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(
     __name__,
-    template_folder='C:/Users/Alejandro/OneDrive/Documents/projects2023/tech-tour-brasil/back-end/app/static/components',
-    static_folder='C:/Users/Alejandro/OneDrive/Documents/projects2023/tech-tour-brasil/back-end/app/static/')
+    template_folder='C:/Users/melissa.konig/Documents/aplicacao/tech-tour-brasil/back-end/app/static/components',
+    static_folder='C:/Users/melissa.konig/Documents/aplicacao/tech-tour-brasil/back-end/app/static')
 
-db = SQLAlchemy(app)
+db = SQLAlchemy()
 
 
 # --- DB connection ---
