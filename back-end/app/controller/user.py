@@ -22,3 +22,12 @@ def create_user(user_lastname, user_firstname, user_gender, user_cpf, user_cep, 
     
     db.session.add(new_user)
     db.session.commit()
+
+
+def authenticte_user(user_firstname, user_password):
+
+    # Cria uma variável local, faz um select no Banco de dados e compara com o input do HTML.
+    check = Users.query.filter_by(user_firstname = "David").first()
+
+    print(f"Imprime o varaiável check: => {check}")
+  
