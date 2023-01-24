@@ -13,7 +13,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hotel Tech Tour Blumenau</title>
+  <title>Sucesso</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link rel="stylesheet" href="static/styles/index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
@@ -47,40 +47,25 @@
   </header>
   <main>
     <div class="container">
-      <div class="row">
-        <div class="container">
-            <div class="row">
-              <div class="col-md-6">
-                <form>
-                    <div class="search-bar">
-                        <input type="text" class="form-control form-control-md" placeholder="Procure seu hotel aqui">
-                        <button type="submit" class="btn btn-primary btn-sm">Procurar</button>
+        <div class="row">
+            <div class="container container-login">
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <h1>Cadastro concluído com sucesso!</h1>
+                        <p>Verifique seu e-mail, para acessar suas informacões</p>
+                        <a href="{{ url_for('home') }}" class="btn btn-primary btn-sm">Ir para o menu</a>
+                    </div>   
+
+                    <div class="col-md-4">
+                        <img class="rounded img-thumbnail sucess-img" src="static/assets/conclusion.png"  width="150" height="150">
                     </div>
+                  
+                </div>
+
             </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <h1>Seja bem vindo!</h1>
-              <p>Procurando por um lugar confortável para ficar durante sua viagem? O Hotel Tech Tour Blumenau oferece quartos espaçosos e modernos, equipados com tudo o que você precisa para uma estadia agradável.</p>
-              <a href="#" class="btn btn-primary">Explorar</a>
-            </div>
-            <div class="col-md-6">
-              <div>
-                <img class="rounded" src="static/assets/greekHotel.jpg" alt="" width="325" height="325">
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <img class="rounded" src="static/assets/rioHotel.jpg" alt=""  width="325" height="325">
-            </div>
-            <div class="col-md-6">
-              <h1>Apenas o melhor para voce!</h1>
-              <p>O Tech Tour Brasil é o site perfeito para aqueles que procuram reservar hotéis com os melhores preços. Com uma variedade de opções de hotéis em todo o país, é fácil encontrar a escolha perfeita para suas necessidades e orçamento. Além disso, o site oferece ferramentas de pesquisa avançadas para ajudá-lo a encontrar o hotel certo, como filtros de preço, localização e avaliações de outros viajantes.</p>
-              <p>Outra vantagem de reservar um hotel através do Tech Tour Brasil é a possibilidade de comparar preços entre diferentes sites de reserva, garantindo que você sempre obtenha o melhor negócio. Além disso, o site oferece suporte ao cliente 24 horas por dia, 7 dias por semana, para garantir que qualquer problema ou dúvida seja resolvido rapidamente e sem problemas. Com o Tech Tour Brasil, você pode reservar sua próxima viagem com confiança e tranquilidade.</p>
-            </div>
-          </div>
-      </div>
+        </div>
     </div>
   </main>
   <footer class="footer navbar-fixed-bottom">

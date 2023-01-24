@@ -33,7 +33,11 @@ def create_user_route():
 
 @app.route("/success")
 def success():
-    return "Usuário criado com sucesso!"
+    return render_template("success.html")
+
+@app.route("/login")
+def login():
+    return render_template("login.html")
 
 @app.route('/user')
 def user():
