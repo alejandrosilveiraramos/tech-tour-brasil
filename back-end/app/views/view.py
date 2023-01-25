@@ -192,8 +192,11 @@ def read_hotel():
         return render_template('home.html', reg_pro = 'register')
     else:
         print('Entrou no ELSE.....')
+
+        lo_modify = request.form['hotel_city'].title()
+
         # Cria um Objeto com o select do banco de dados onde 'hotel_name' é igual a hotel_name vindo do HTML.
-        lo_hotel = Hotel.query.filter_by(hotel_name = request.form['hotel_name']).order_by(Hotel.hotel_coust)
+        lo_hotel = Hotel.query.filter_by(hotel_city = lo_modify).order_by(Hotel.hotel_coust)
 
         # Interação para imprimir os hoteis.
         for hoteis in lo_hotel:
@@ -210,5 +213,5 @@ def read_hotel():
        
 """
         lo_hotel = Hotel.query.filter_by().order_by(Hotel.hotel_coust)
-        
+
 """
