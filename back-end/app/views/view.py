@@ -20,11 +20,11 @@ def register():
         return render_template('register.html', reg_pro = 'register')
     else:
         return redirect(url_for('home', reg_pro = 'profile'))
-@app.route('/register')
 
 
 @app.route('/create_user', methods=['GET', 'POST'])
 def create_user():
+
     if 'username' not in session or session['username'] is None:
 
         lo_user_lastname = request.form['user_lastName']
@@ -37,12 +37,11 @@ def create_user():
         lo_user_email = request.form['user_email']
         lo_user_password = request.form['user_password']
 
-        # Faz m select no banco para ver se o usuário já está cadastrado.    
-        lo_novo_usuario = Users.query.filter_by(user_cep = lo_user_cep).first()
+        # Faz um select no banco para ver se o usuário já está cadastrado.    
+        lo_novo_usuario = Users.query.filter_by(user_cpf = lo_user_cpf).first()
 
         if lo_novo_usuario:
-            # Usuário já cadastrado
-
+            # Usuário já cadastrado, apresentr uma tela de mensagem
             return redirect(url_for('register', reg_pro = 'register'))
         else:
 
@@ -57,20 +56,25 @@ def create_user():
                                     user_email = lo_user_email,
                                     user_password = lo_user_password)
         
-        db.session.add(lo_novo_usuario)
-        db.session.commit()
+            db.session.add(lo_novo_usuario)
+            db.session.commit()
 
-        # Ou fazer uma tela de Registo com sucesso.            
-        return redirect(url_for('success', reg_pro = 'register'))
+            # Armazena Usuário
+            session['username'] = lo_novo_usuario.user_firstname
+
+            # Ou fazer uma tela de Registo com sucesso.            
+            return redirect(url_for('success', reg_pro = 'register'))
+        
+    else:
     
-    return redirect(url_for('home', reg_pro = 'profile'))
+        return redirect(url_for('home', reg_pro = 'profile'))
 
 
 @app.route('/success')
 def success():
 
     if 'username' not in session or session['username'] is None:
-        print('Entrou aqui')
+
         return redirect(url_for('home', reg_pro = 'register'))
     else:
         return render_template('success.html', reg_pro = 'profile')
@@ -97,14 +101,10 @@ def authenticte_user():
         if lo_check:
             # Origem do HTML for igual a Objeto user .email e .senha
             if (request.form['user_email'] == lo_check.user_email) and (request.form['user_password'] == lo_check.user_password):
-                    # Armazena Usuário
+                # Armazena Usuário
                 session['username'] = lo_check.user_firstname
 
-                print(f'Aqui Usuário logado. => {lo_check.user_firstname}')
-
-                print(session['username'])
-
-                return redirect(url_for('success', reg_pro = 'profile'))
+                return render_template('login_success.html', reg_pro = 'profile')
             else:
 
                 return redirect(url_for('login', reg_pro = 'register'))
@@ -139,7 +139,43 @@ def read_user():
         return render_template('profile.html', reg_pro = 'profile', usuario = lo_usuario)
 
 
-@app.route('/user')
-def user():
+@app.route('/update', methods = ['POST'])
+def update_user():
+    
+    if 'username' not in session or session['username'] is None:
 
-    return render_template('user.html')
+        return render_template('home.html', reg_pro = 'register')
+    else:
+
+        lo_update_user = Users.query.filter_by(user_id = request.form['id_user']).first()
+
+        lo_update_user.user_lastname = request.form['user_lastName']
+        lo_update_user.user_firstname = request.form['user_firstName']
+        lo_update_user.user_gender = bool(request.form['user_gender'])
+        lo_update_user.user_cpf = request.form['user_cpf']
+        lo_update_user.user_cep = request.form['user_cep']
+        lo_update_user.user_phone = request.form['user_phone']
+        lo_update_user.user_cellphone = request.form['user_cellphone']
+        lo_update_user.user_email = request.form['user_email']
+        lo_update_user.user_password = request.form['user_password']
+    
+        db.session.add(lo_update_user)
+        db.session.commit()
+
+        # Ou fazer uma tela de Registo com sucesso.            
+        return render_template('update_success.html', reg_pro = 'profile')
+
+
+@app.route("/delete/<int:id>")
+def delete_user(id):
+    
+    if 'username' not in session or session['username'] is None:
+
+        return render_template('home.html', reg_pro = 'register')
+    else:
+        lo_delete_user = Users.query.filter_by(user_id = id).delete()
+        db.session.commit()
+
+        session['username'] = None
+
+        return redirect(url_for("home"))

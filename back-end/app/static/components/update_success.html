@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Tour Blumenau</title>
+</head>
+<body>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sucesso</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="static/styles/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+
+</head>
+<body>
+  <header class="bg-#f1f1e7">
+    <nav class="custom-header navbar navbar-expand-lg navbar-light bg-transparent">
+      <a class="navbar-brand" href="{{url_for('home')}}">
+        <img src="static/assets/logo.png" alt="Logo do Hotel Tech Tour Blumenau" width="120" height="120">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Hotéis</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+        <a class="nav-link icon" href="/{{ reg_pro }}"><i class="fas fa-user"></i></a><!-- Usar a rota e não função, pelo menos aqui -->
+        <a class="nav-link icon" href="#"><i class="fas fa-bars"></i></a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="container">
+        <div class="row">
+            <div class="container container-login">
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <h1>Atualização concluído com sucesso!</h1>
+                        <a href="{{ url_for('home') }}" class="btn btn-primary btn-sm">Ir para o menu</a>
+                    </div>   
+
+                    <div class="col-md-4">
+                        <img class="rounded img-thumbnail sucess-img" src="static/assets/conclusion.png"  width="150" height="150">
+                    </div>
+                  
+                </div>
+
+            </div>
+        </div>
+    </div>
+  </main>
+  <footer class="footer navbar-fixed-bottom">
+    <div class="col-md-12">
+        <p class="text-center">Copyright © Hotel Tech Tour Blumenau</p>
+    </div>
+  </footer>
+</body>
+</html>
