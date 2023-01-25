@@ -2,8 +2,8 @@
 -- DML - Hotel
 -- -----------------------------------------------------
 
-INSERT INTO tb_hotel
-	(id_hotel, name_hotel, city, coust)
+INSERT INTO hotel
+	(hotel_id, hotel_name, hotel_city, totel_coust)
 VALUES 
 	(1, 'Glória', 'Blumenau', '220'),
 	(2, 'Plaza Hering', 'Blumenau', '450'),

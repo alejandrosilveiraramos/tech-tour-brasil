@@ -51,11 +51,12 @@
         <div class="container">
             <div class="row">
               <div class="col-md-6">
-                <form>
+                <form method="post" action="{{ url_for('read_hotel') }}">
                     <div class="search-bar">
-                        <input type="text" class="form-control form-control-md" placeholder="Procure seu hotel aqui">
+                        <input type="text" class="form-control form-control-md" placeholder="Procure seu hotel aqui" name="hotel_name">
                         <button type="submit" class="btn btn-primary btn-sm">Procurar</button>
                     </div>
+                  </form>
             </div>
           </div>
           <div class="row">
