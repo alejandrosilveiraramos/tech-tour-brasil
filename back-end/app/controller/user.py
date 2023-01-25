@@ -29,23 +29,20 @@ def authenticte_user(louser_email, louser_password):
     # Cria uma variável local, faz um select no Banco de dados e compara com o input do HTML.
     check = Users.query.filter_by(user_email = louser_email).first()
 
-    print(f'Imprime o varaiável check: => {check}')
-    print(louser_email)
-    print(louser_password)
-    print('Vindo do Banco de Dados')
-    print(check.user_email)
-    print(check.user_password)
-
     if check:
         # Origem do HTML for igual a Objeto user .name e .senha
         if (louser_email == check.user_email):
-            print('Verificou email')
+
             if (louser_password == check.user_password):
-                print('Verificou a senha')
                 # Armazena Usuário
                 session['usernamr'] = check.user_firstname
 
                 print(f'Imprime a session do Usuário: {check.user_firstname}')
+
+                return session['usernamr']
         else:
             print('Error')
+            session['usernamr'] = None
+        
+            return session['usernamr']
   

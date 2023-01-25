@@ -5,12 +5,20 @@ from controller.user import create_user, authenticte_user
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    if 'username' not in session or session['username'] is None:
+
+        return render_template('home.html', reg_pro = 'register')
+    else:
+        return render_template('home.html', reg_pro = 'profile')
 
 
 @app.route('/register')
 def register():
-    return render_template('register.html')
+    if 'username' not in session or session['username'] is None:
+
+        return render_template('register.html', reg_pro = 'register')
+    else:
+        return render_template('home.html', reg_pro = 'profile')
 
 
 @app.route('/create_user', methods=['GET', 'POST'])
@@ -67,9 +75,10 @@ def authenticte_user_route():
     if request.method == 'POST':
         louser_email = request.form['user_email']
         louser_password = request.form['user_password']
-
-        authenticte_user(louser_email, louser_password)
         
-        return redirect(url_for('success'))
 
-    return render_template('hotels.html')
+        if authenticte_user(louser_email, louser_password) != None:
+
+            return redirect(url_for('success'))
+        else:
+            return render_template('hotels.html')

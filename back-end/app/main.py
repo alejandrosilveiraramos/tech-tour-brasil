@@ -19,8 +19,8 @@ db = SQLAlchemy(app)
 
 
 # --- Routes ---
-
-from routes.routes  import *
+#from routes.routes  import *
+from views.view import *
 
 # --- Main Running ---
 if __name__ == "__main__":
