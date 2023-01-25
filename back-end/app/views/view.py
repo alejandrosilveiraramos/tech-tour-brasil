@@ -204,7 +204,7 @@ def read_hotel():
         return render_template('hotels.html', reg_pro = 'profile', obj_hotel = lo_hotel)
 
 
-@app.route('/hotel_link', methods = ['POST'])
+@app.route('/hotel_link')
 def hotel_link():
 
     if 'username' not in session or session['username'] is None:
@@ -212,24 +212,17 @@ def hotel_link():
         return render_template('home.html', reg_pro = 'register')
     else:
 
-        lo_modify = request.form['hotel_city'].title()
+        #lo_modify = request.form['hotel_city'].title()
 
         # Cria um Objeto com o select do banco de dados onde 'hotel_name' é igual a hotel_name vindo do HTML.
         lo_hotel = Hotel.query.filter_by().order_by(Hotel.hotel_coust)
 
         # Interação para imprimir os hoteis.
-        for hoteis in lo_hotel:
-            print(f'Id do Hotel => {hoteis.hotel_id}')
-            print(f'Name do Hotel => {hoteis.hotel_name}')
-            print(f'Cidade do Hotel => {hoteis.hotel_city}')
-            print(f'Diária do Hotel => {hoteis.hotel_coust}')
+        #for hoteis in lo_hotel:
+        #    print(f'Id do Hotel => {hoteis.hotel_id}')
+        #    print(f'Name do Hotel => {hoteis.hotel_name}')
+        #    print(f'Cidade do Hotel => {hoteis.hotel_city}')
+        #    print(f'Diária do Hotel => {hoteis.hotel_coust}')
 
         # Renderiza a página HTML pasando como parametros: a página html, link e o objeto usuario. 
         return render_template('hotels.html', reg_pro = 'profile', obj_hotel = lo_hotel)
-
-# linha de código para fazer um select de todos os Hoteis no banco de dados, ordenado por preço.
-       
-"""
-        lo_hotel = Hotel.query.filter_by().order_by(Hotel.hotel_coust)
-
-"""
