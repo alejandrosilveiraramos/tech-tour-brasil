@@ -10,13 +10,5 @@ class History(db.Model):
     history_check_out = db.Column(db.Date, nullable = False)
 
 
-    def __init__(self, history_id, history_fk_id_user, history_fk_id_hotel, history_check_in, history_check_out):
-        self.hohistory_id = history_id
-        self.history_fk_id_user = history_fk_id_user
-        self.history_fk_id_hotel = history_fk_id_hotel
-        self.history_check_in = history_check_in
-        self.history_check_out = history_check_out
-
-
 def __repr__(self):
     return '<Name %r>' % self.name
